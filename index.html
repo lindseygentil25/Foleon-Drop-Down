@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table Assignments</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 60px 20px;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* DROPDOWN */
+.dropdown {
+  margin-bottom: 18px;
+  border-radius: 25px 25px 25px 0px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: all 0.4s ease;
+}
+
+/* HEADER */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 22px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.5s cubic-bezier(.22,1,.36,1);
+}
+
+/* ORANGE FILL */
+.dropdown-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #e14403;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(.22,1,.36,1);
+  z-index: 0;
+  border-radius: 25px 25px 25px 0px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #101820;
+  position: relative;
+  z-index: 1;
+}
+
+.line {
+  flex: 1;
+  height: 2px;
+  background: #e14403;
+  margin: 0 15px;
+  transition: background 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.arrow {
+  font-size: 14px;
+  color: #e14403;
+  transition: transform 0.4s ease, color 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* ACTIVE STATE */
+.dropdown.active .dropdown-header::before {
+  transform: scaleX(1);
+}
+
+.dropdown.active .title,
+.dropdown.active .arrow {
+  color: #ffffff;
+}
+
+.dropdown.active .line {
+  background: #ffffff;
+}
+
+.dropdown.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* CONTENT */
+.content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s cubic-bezier(.22,1,.36,1);
+  background: #ffffff;
+}
+
+.content-inner {
+  padding: 25px;
+}
+
+/* NAME LIST */
+.name-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.name-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 15px;
+}
+
+.name-list li:last-child {
+  border-bottom: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- TABLE 1 -->
+  <div class="dropdown">
+    <div class="dropdown-header">
+      <div class="title">TABLE 1</div>
+      <div class="line"></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="content">
+      <div class="content-inner">
+        <ul class="name-list">
+          <li>Barbara Patzke</li>
+          <li>Dao Sathonghon</li>
+          <li>Eric Tankersley</li>
+          <li>Garry Cervantes</li>
+          <li>Grayson Austin</li>
+          <li>Katherine Wright</li>
+          <li>Lindsay Doud</li>
+          <li>Mike Barrera</li>
+          <li>Ryan Sammons</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLE 2 -->
+  <div class="dropdown">
+    <div class="dropdown-header">
+      <div class="title">TABLE 2</div>
+      <div class="line"></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="content">
+      <div class="content-inner">
+        <ul class="name-list">
+          <li>Alexandra Michael</li>
+          <li>Chris Conrad</li>
+          <li>David Weitzel</li>
+          <li>Eric Mehalko</li>
+          <li>Heather Sonier</li>
+          <li>James King</li>
+          <li>Mitchell West</li>
+          <li>Noe Salinas</li>
+          <li>Stanton Pearson</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <div class="dropdown-header">
+      <div class="title">TABLE 3</div>
+      <div class="line"></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="content">
+      <div class="content-inner">
+        <ul class="name-list">
+          <li>Adam Gunderson</li>
+          <li>Bob Alvarez</li>
+          <li>Courtney Broughton</li>
+          <li>Jim Bellm</li>
+          <li>Johnathan Lemons</li>
+          <li>Karl Kirkpatrick</li>
+          <li>Kevin Hughes</li>
+          <li>Mark McMurray</li>
+          <li>Ricky Shelton</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+      <div class="dropdown">
+    <div class="dropdown-header">
+      <div class="title">TABLE 4</div>
+      <div class="line"></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="content">
+      <div class="content-inner">
+        <ul class="name-list">
+          <li>Adam Fanning</li>
+          <li>Carolyn Pierce</li>
+          <li>Courtney Broughton</li>
+          <li>Jim Bellm</li>
+          <li>Johnathan Lemons</li>
+          <li>Karl Kirkpatrick</li>
+          <li>Kevin Hughes</li>
+          <li>Mark McMurray</li>
+          <li>Ricky Shelton</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Duplicate this block up to TABLE 14 -->
+  
+</div>
+
+<script>
+document.querySelectorAll(".dropdown-header").forEach(header => {
+  header.addEventListener("click", () => {
+    const dropdown = header.parentElement;
+    const content = dropdown.querySelector(".content");
+
+    if (dropdown.classList.contains("active")) {
+      content.style.height = content.scrollHeight + "px";
+      requestAnimationFrame(() => {
+        content.style.height = "0px";
+      });
+      dropdown.classList.remove("active");
+    } else {
+      dropdown.classList.add("active");
+      content.style.height = content.scrollHeight + "px";
+    }
+  });
+});
+</script>
+
+</body>
+</html>
